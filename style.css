@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #242227;
+    background-color: #5f5f5f;
     flex-direction: column;
 }
 
@@ -14,22 +14,38 @@ h1 {
 button {
     font-size: 20px;
     border-radius: 10px;
+    margin: 0.75em;
+}
+
+button:focus {
+    outline: none;
 }
 
 .container {
+    min-width: 200px;
+    max-width: 400px;
+    background-color: #242227;
+    box-shadow: 3px 3px #888888;
     display: inline-grid;
+    border: 8px solid black;
     border-radius: 10px;
     grid-template-rows: repeat(2, auto);
 }
 
-.calcDisplay {
-    border-bottom: 2px solid black;
-    grid-row: 1 / 2;
-    padding: 20px;
-    text-align: right;
-    font-size: 30px;
+.calcDisplayContainer {
     background-color: white;
     border-radius: 10px;
+    max-width: 100%;
+    margin: 0.75em 0.5em;
+    padding: 20px;
+    grid-row: 1 / 2;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.calcDisplay {
+    float: right;
+    font-size: 30px;
 }
 
 .calcButtons {
@@ -37,6 +53,18 @@ button {
     display: inline-grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
+    
+}
+
+.calcButtons button:active {
+    background-color: grey;
+}
+
+
+.active {
+    transition: all 0.1s ease;
+    transform: scale(1.1);
+    background-color: grey;
 }
 
 .calcClear {
